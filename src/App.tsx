@@ -31,8 +31,14 @@ function App() {
   const copyToClipboard = async () => {
     if (formatted && prLink) {
       try {
-        const hyperlink = `[${formatted}](${prLink})`
-        await navigator.clipboard.writeText(hyperlink)
+        const hyperlinkText = `[${formatted}](${prLink})`;
+        const hyperlinkHtml = `<a href="${prLink}">${formatted}</a>`;
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/plain': new Blob([hyperlinkText], { type: 'text/plain' }),
+            'text/html': new Blob([hyperlinkHtml], { type: 'text/html' }),
+          }),
+        ]);
         alert('Copied hyperlink to clipboard!')
       } catch (e) {
         alert('Failed to copy')
