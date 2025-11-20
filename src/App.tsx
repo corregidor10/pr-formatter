@@ -29,10 +29,11 @@ function App() {
   }
 
   const copyToClipboard = async () => {
-    if (formatted) {
+    if (formatted && prLink) {
       try {
-        await navigator.clipboard.writeText(formatted)
-        alert('Copied to clipboard!')
+        const hyperlink = `[${formatted}](${prLink})`
+        await navigator.clipboard.writeText(hyperlink)
+        alert('Copied hyperlink to clipboard!')
       } catch (e) {
         alert('Failed to copy')
       }
