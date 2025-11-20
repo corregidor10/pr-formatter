@@ -4,15 +4,21 @@ A simple React application built with TypeScript and Vite that formats Azure Dev
 
 ## Features
 
-- Paste an Azure DevOps PR link
-- Automatically formats it as a clickable hyperlink "PR {number} {repo name}" for Teams
-- Copy the rich text hyperlink to clipboard with one click (pastes as link in Teams desktop)
+- Paste multiple Azure DevOps PR links (one per line)
+- Automatically formats each as a clickable hyperlink "PR {number} {repo name}" for Teams
+- Copy all rich text hyperlinks to clipboard with one click (pastes as links in Teams desktop)
 
 ## Example
 
-Input: `https://dev.azure.com/Accem/PLANEA/_git/Accem.Planea.Notifications/pullrequest/796`
+Input (multiple lines):
+```
+https://dev.azure.com/Accem/PLANEA/_git/Accem.Planea.Notifications/pullrequest/796
+https://dev.azure.com/Accem/PLANEA/_git/Accem.Planea.API/pullrequest/123
+```
 
-Output: Copies a rich text hyperlink that pastes in Teams as "PR 796 Notificaciones" (clickable link).
+Output: Copies rich text hyperlinks that paste in Teams as:
+- PR 796 Notificaciones (clickable)
+- PR 123 API (clickable)
 
 ## Getting Started
 
