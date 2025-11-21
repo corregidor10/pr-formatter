@@ -14,7 +14,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   text-align: center;
 }
@@ -25,57 +25,63 @@ h1 {
   font-size: 2rem;
 }
 
-.pr-input {
-  width: 100%;
+.entry {
+  margin-bottom: 1.5rem;
   padding: 1rem;
-  border: 2px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 1rem;
-  resize: vertical;
-  min-height: 100px;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
+  background: #f9f9f9;
 }
 
-.pr-input:focus {
+.pr-input, .comment-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.pr-input:focus, .comment-input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.formatted {
-  margin-top: 1.5rem;
-}
-
-.formatted h2 {
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.formatted ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.formatted li {
-  background: #f8f9fa;
+.comment-input {
+  width: 100%;
   padding: 0.75rem;
-  margin-bottom: 0.5rem;
+  border: 2px solid #e0e0e0;
   border-radius: 6px;
-  border-left: 4px solid #667eea;
-  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.entry p {
+  margin: 0.5rem 0;
+  color: #555;
 }
 
 button {
   background: #667eea;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s;
+  margin: 0.25rem;
 }
 
 button:hover:not(:disabled) {
@@ -85,4 +91,42 @@ button:hover:not(:disabled) {
 button:disabled {
   background: #a0aec0;
   cursor: not-allowed;
+}
+
+.add-btn {
+  background: #48bb78;
+}
+
+.add-btn:hover {
+  background: #38a169;
+}
+
+.generated {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.generated h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.message-output {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #b91c1c;
+  background: #fff1f2;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: left;
 }
